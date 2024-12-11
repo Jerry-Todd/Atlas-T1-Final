@@ -1,0 +1,70 @@
+
+main {
+    display: flex;
+    justify-content: center;
+    font-family: ubuntu;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.content-box {
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.text.title {
+    font-weight: bold;
+    font-size: 20px;
+}
+#potd-image {
+    width: 100%;
+}
+#potd-image {
+    height: auto;
+    max-height: 400px;
+    max-width: 100%;
+    width: auto;
+    object-fit: cover;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: white;
+}
+
+@media only screen and (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+    #nav-item-container {
+        height: 50px;
+        line-height: 50px;
+    }
+    #nav-item-container a {
+        height: 50px;
+        margin-right: 20px;
+    }
+    .nav-item {
+        line-height: 50px;
+    }
+    main {
+        padding-top: 20px;
+    }
+    .content-box {
+        width: 80%;
+    }
+}
