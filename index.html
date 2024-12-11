@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
     <nav>
-        <div id="page-title">NASA</div>
+        <div id="page-title">NASA<div>&nbsp;API</div></div>
         <div id="nav-item-container">
             <a href="">
                 <div class="nav-item">link1</div>
@@ -22,6 +24,20 @@
             </a>
         </div>
     </nav>
+    <main>
+        <div class="content-box">
+            <div class="text title">
+                NASA's picture of the day!
+            </div>
+            <div class="text title" id="potd-title">
+                Title of photo
+            </div>
+            <img id="potd-image" src="" alt="Nasa photo">
+            <div class="text" id="potd-description">
+                Description of photo
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>

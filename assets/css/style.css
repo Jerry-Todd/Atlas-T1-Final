@@ -6,16 +6,23 @@
     font-family: 'roboto';
     src: url('/assets/Fonts/Roboto-Regular.ttf');
 }
+
 @font-face {
     font-family: 'ubuntu';
     src: url('/assets/Fonts/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'anton';
+    src: url('/assets/Fonts/Anton-Regular.ttf');
 }
 
 
 body {
     background-color: black;
     background-image: url(https://www.nasa.gov/wp-content/uploads/2024/11/pia22081orig.jpg);
-    background-size: 100%;
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
     color: var(--text-color);
     height: 100%;
@@ -31,10 +38,18 @@ nav {
 }
 
 #page-title {
-    font-family: ubuntu;
-    font-weight: bolder;
+    font-family: anton;
+    letter-spacing: 10px;
     font-size: 100px;
     line-height: 100px;
+    height: 100px;
+    display: flex;
+}
+
+#page-title div {
+    font-size: 40px;
+    height: 100%;
+    line-height: inherit;
 }
 
 #nav-item-container {
@@ -45,12 +60,77 @@ nav {
     text-decoration: none;
     color: var(--text-color);
     font-family: ubuntu;
+    margin-left: 20px;
 }
 
 .nav-item {
-    width: 120px;
+    width: fit-content;
     height: 100%;
     text-align: center;
     font-size: 30px;
     line-height: 100px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    font-family: ubuntu;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.content-box {
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.text.title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#potd-image {
+    height: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: white;
+}
+
+@media only screen and (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+    #nav-item-container {
+        height: 50px;
+        line-height: 50px;
+    }
+    #nav-item-container a {
+        height: 50px;
+        margin-right: 20px;
+    }
+    .nav-item {
+        line-height: 50px;
+    }
+    main {
+        padding-top: 20px;
+    }
+    .content-box {
+        width: 80%;
+    }
 }
