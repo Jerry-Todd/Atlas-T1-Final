@@ -1,3 +1,6 @@
+
+const api_key = 'VWDPpY06br1UmTavG8KivN30mNbVG64xKpQLo0qH'
+
 // A function to make axios a little easier to use
 function request(url, callback, parameters) {
     let fullURL = url + '?api_key=' + api_key
