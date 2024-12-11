@@ -6,21 +6,9 @@ const potd_title = (text) => document.getElementById('potd-title').textContent =
 const potd_description = (text) => document.getElementById('potd-description').textContent = text
 const potd_link = 'https://api.nasa.gov/planetary/apod'
 
-// A function to make axios a little easier to use
-function request(url, callback) {
-    axios.get(url+'?api_key='+api_key)
-        .then(response => callback(response.data))
-        .catch(error => {
-            console.error(error)
-        })
-}
-
-
-
-request(potd_link,(data) => {
-    console.log(data)
-
+request(potd_link, (data) => {
     potd(data.hdurl)
     potd_title(data.title)
     potd_description(data.explanation)
 })
+
