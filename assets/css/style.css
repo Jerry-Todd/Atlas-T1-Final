@@ -101,9 +101,15 @@ main {
     font-weight: bold;
     font-size: 20px;
 }
-
 #potd-image {
-    height: 400px;
+    width: 100%;
+}
+#potd-image {
+    height: auto;
+    max-height: 400px;
+    max-width: 100%;
+    width: auto;
+    object-fit: cover;
     margin-top: 10px;
     margin-bottom: 10px;
     border-style: solid;
