@@ -1,0 +1,40 @@
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: red;
+    color: rgb(5, 5, 216);
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  /* Adding photo background*/
+  body{
+    background-image: url(53951942710-9389759151-o.png);
+  }
+  /*Shapping the button into a saucer shapeish */
+  button:hover{
+background-color:darkcyan;
+border-radius: 50%;
+  }
+  button{
+    border-radius: 50%;
+  }
