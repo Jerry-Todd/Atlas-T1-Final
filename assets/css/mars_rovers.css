@@ -39,7 +39,16 @@ main {
     font-size: 20px;
 }
 
-.rover-option:hover {
+.option {
+    border-color: white;
+    border-style: solid;
+    height: 30px;
+    line-height: 30px;
+    width: 120px;
+    border-radius: 10px;
+}
+
+.option:hover {
     text-decoration: underline;
     cursor: pointer;
 }

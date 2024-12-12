@@ -1,13 +1,13 @@
 
 const options_status = document.getElementById('options-status')
 
-const status = {
-    loading: 'Loading...',
+const statusCode = {
+    loading: 'Loading rovers, please wait.',
     failed: 'Could not load rovers.'
 }
 
 const rover_options_container = document.getElementById('rover-options')
-const rover_option_template = document.getElementsByClassName('rover-option')[0]
+const rover_option_template = document.getElementsByClassName('option')[0]
 rover_option_template.remove()
 
 const api_links = {
@@ -16,8 +16,9 @@ const api_links = {
 
 let rovers
 
+options_status.textContent = statusCode.loading
 request(api_links.roverList, (data) => {
-    // options_status.textContent = status.loading
+    options_status.textContent = ""
     rovers = data.rovers
     console.log(rovers)
 
