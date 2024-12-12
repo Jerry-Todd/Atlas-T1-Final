@@ -70,4 +70,6 @@ main {
 .image {
     height: 200px;
     margin: 5px;
+    border-style: solid;
+    border-color: white;
 }

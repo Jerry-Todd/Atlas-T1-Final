@@ -98,7 +98,7 @@ function loadImages(rover_name, camera_name, amount, index, photo_count) {
     if (photo_count == undefined) {
         photo_count = 0
     }
-    if (photo_count > amount) {
+    if (photo_count > amount || index > 100) {
         images_status.style.display = 'none'
         return
     }
