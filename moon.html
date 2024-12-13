@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Trek API Demo</title>
+    <link rel="stylesheet" href="nasa.css">
+    <div class="topnav">
+        <a href="index.html" class="Home">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="mars.html">Mars</a>
+        <a href="moon.html">Moon</a>
+    </div>
+</head>
+<body>
+    <header>
+        <h1>Moon Trek API</h1>
+        <p>Explore data about the Moon using NASA's Moon Trek API</p>
+    </header>
+
+    <main>
+        <div id="output">
+            <div id="loading">Loading data...</div>
+        </div>
+    </main>
+    <h3>Facts about the Moon</h3>
+    <p></p>
+
+    <script>
+        const outputDiv = document.getElementById('output');
+        const loadingMessage = document.getElementById('loading');
+
+        async function fetchMoonImage() {
+            try {
+                const response = await fetch('https://trek.nasa.gov/tiles/Moon/EQ/LRO_WAC_Mosaic_Global_303ppd_v02/1.0.0/default/default028mm/0/0/0.jpg');
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                // Handle the response as a Blob for the image
+                const imageBlob = await response.blob();
+                const imageUrl = URL.createObjectURL(imageBlob);
+
+                // Update the UI to display the image
+                loadingMessage.style.display = 'none';
+                outputDiv.innerHTML = `<h3>Moon Image</h3><img src="${imageUrl}" alt="Moon Image" style="max-width: 100%;">`;
+            } catch (error) {
+                loadingMessage.style.display = 'none';
+                outputDiv.innerHTML = `<h3 id="error">Error:</h3><p>${error.message}</p>`;
+            }
+        }
+
+        fetchMoonImage();
+    </script>
+</body>
+</html>
